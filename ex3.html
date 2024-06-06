@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Number() {
+            const randomNumber = Math.floor(Math.random() * 11);
+            let userNumber = prompt("Devinez un chiffre entre 0 et 10:");
+            
+            userNumber = parseInt(userNumber, 10);
+        
+            if (userNumber === randomNumber) {
+                alert("Félicitations! Vous avez trouvé le bon chiffre.");
+            } else {
+                alert("Désolé, le bon chiffre était " + randomNumber + ". Essayez encore!");
+            }
+        }
+        Number();
+    </script>
+</body>
+</html>

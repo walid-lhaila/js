@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book</title>
+    <style>
+        .contact {
+            color: blue;
+        }
+        
+        .email {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Exercice 7</h3>
+    <p>Nous allons voir comment faire un petit AddressBook comme celui-ci. Si on clique dans la check-box, l'adresse correspondante apparait dans le textarea, et est sélectionné, ce qui permet de faire un copier rapide.</p>
+
+    <div>
+        <label><input type="checkbox" class="contact" data-email="b.dupont@mail.com"> Bruno Dupont &lt;b.dupont@mail.com&gt;</label><br>
+        <label><input type="checkbox" class="contact" data-email="jm@toto.org"> Jean Martin &lt;jm@toto.org&gt;</label><br>
+        <label><input type="checkbox" class="contact" data-email="Philippe.sarcher@mail.dotcom.fr"> Philippe Sarcher &lt;Philippe.sarcher@mail.dotcom.fr&gt;</label><br>
+        <label><input type="checkbox" class="contact" data-email="karsher@altern.org"> Fifi Karsher &lt;karsher@altern.org&gt;</label><br>
+        <label><input type="checkbox" class="contact" data-email="jp@terrier.com"> Jeannot Lapin &lt;jp@terrier.com&gt;</label><br>
+    </div>
+
+    <button onclick="copyEmails()">Mail !!</button>
+
+    <textarea id="emailArea" rows="4" cols="50"></textarea>
+
+    <script>
+        function copyEmails() {
+            let emailArea = document.getElementById('emailArea');
+            emailArea.value = '';
+            let contacts = document.querySelectorAll('.contact:checked');
+            contacts.forEach(contact => {
+                emailArea.value += contact.getAttribute('data-email') + '\n';
+            });
+            emailArea.select();
+            document.execCommand('copy');
+        }
+    </script>
+</body>
+
+</html>

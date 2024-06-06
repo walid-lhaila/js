@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Calculette à Euro</title>
+</head>
+
+<body>
+    <h1>La calculette à Euro</h1>
+    <div>
+        <input type="number" id="valeur" placeholder="Entrez une valeur">
+        <br><br>
+        <button onclick="convertir('euro')">Euro</button>
+        <button onclick="convertir('dirham')">Dirham</button>
+    </div>
+
+    <script>
+        const tauxChange = 10.18;
+
+        function convertir(devise) {
+            const valeur = parseFloat(document.getElementById('valeur').value);
+            if (!isNaN(valeur)) {
+                let resultat;
+                if (devise === 'euro') {
+                    resultat = valeur / tauxChange;
+                    alert(`${valeur} DHS équivalent à ${resultat.toFixed(2)} EUR`);
+                } else if (devise === 'dirham') {
+                    resultat = valeur * tauxChange;
+                    alert(`${valeur} EUR équivalent à ${resultat.toFixed(2)} DHS`);
+                }
+            } else {
+                alert("Veuillez entrer une valeur numérique valide.");
+            }
+        }
+    </script>
+</body>
+
+</html>

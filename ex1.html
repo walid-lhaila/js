@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex flex-col justify-center items-center text-center h-screen">
+        <button id="btn" class="text-xl font-medium font-serif px-16 py-4 rounded bg-blue-500 text-white hover:bg-blue-600 duration-500 ">Click</button>
+        <h1 id="content" class="text-4xl font-bold font-mono text-black mt-16 hidden ">Hello World</h1>
+    </div>
+
+
+    <script>
+            const btn = document.getElementById('btn');
+            const content = document.getElementById('content');
+
+            btn.addEventListener('click', () => {
+                content.classList.toggle('hidden');
+                content.classList.toggle('block');
+            })
+
+    </script>
+</body>
+</html>
